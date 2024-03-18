@@ -1,0 +1,56 @@
+<div class="table-responsive">
+	<table  class="table table-bordered table-hover table-striped" id="ventasList">
+		<thead class="thead-light">
+		<tr>
+		
+						<th>#</th>
+						<th>#Cita</th>
+						<th>Documento</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Fecha</th>
+						<th>Hora</th>
+						<th>Servicio y Costo</th>
+						<th>Doctor@</th>
+						<th></th>			
+		</tr>
+		</thead>
+		<tbody>
+					<tr th:each="ventas: ${ventasList}">
+						<td th:text="${ventas.id}"></td>
+						<td th:each="cita :${ventas.cita}" th:text="${cita.id}"></td>
+						<td th:each="cita :${ventas.cita}" th:text="${cita.documento}"></td>
+						<td th:each="cita :${ventas.cita}" th:text="${cita.nombre}"></td>
+						<td th:each="cita :${ventas.cita}" th:text="${cita.apellido}"></td>
+						<td th:each="cita :${ventas.cita}" th:text="${cita.fecha}"></td>
+						<td th:each="cita :${ventas.cita}" th:text="${cita.hora}"></td>
+						<td th:each="costo :${ventas.costo}" th:text="${costo.name}"></td>
+						<td th:each="doctores :${ventas.doctores}" th:text="${doctores.name}"></td>
+						<td><span >
+						<a href="#" th:href="@{'/editVenta/'+ ${ventas.id}}"><i class="fas fa-edit"></i></a>
+					</span>
+					<span  >
+					| <a href="#" th:onclick="'javascript:confirmDelete(\''+ ${ventas.id} +'\');'"><i class="fas fa-user-times"></i></a>
+					</span>
+					<span >
+						|<a href="#" th:href="@{'/verV/'+ ${ventas.id}}"><i class="fas fa-eye"></i></a>
+					</span>	
+				</tr>
+		
+		</tbody>
+	</table>
+		<div class="alert alert-danger text-center" th:if="${ListErrorMenssage}" th:text="${ListErrorMenssage}">Error MEssage</div>
+
+</div>
+<script type="text/javascript">
+function confirmDelete(id){
+	$('#deleteModal').modal('show');
+	$("#userIdHiddenInput").val(id);
+}
+
+function deleteVenta(){
+	var id = $("#userIdHiddenInput").val();
+    window.location = "deleteVenta/"+id;
+}
+</script>
+

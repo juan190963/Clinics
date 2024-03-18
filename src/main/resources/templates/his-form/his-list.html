@@ -1,0 +1,69 @@
+<div class="table-responsive">
+	<table id="hisList" class="table table-bordered table-hover table-striped">
+		<thead class="thead-light">
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">#Venta</th>
+			<th scope="col">Documento</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Apellidos</th>
+			<th scope="col">Edad</th>
+			<th scope="col">Genero</th>
+			<th scope="col">Peso(kg)</th>
+			<th scope="col">Altura(cm)</th>
+			<th scope="col">Antecedentes Medico</th>
+			<th scope="col">Alergias</th>
+			<th scope="col">Causa de las alergias</th>
+			<th scope="col">Medicamentos Actuales</th>
+			<th scope="col">Examen de la cita</th>
+			<th scope="col">Diagnostico</th>
+			<th scope="col">Tratamiento</th>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="his: ${hisList}">
+			<td th:text="${his.id}"></td>
+			<td th:each="venta :${his.venta}" th:text="${venta.id}"></td>
+			<td th:text="${his.documento}"></td>
+			<td th:text="${his.nombre}"></td>
+			<td th:text="${his.apellido}"></td>
+			<td th:text="${his.edad}"></td>
+			<td th:each="genero :${his.genero}" th:text="${genero.name}"></td>
+			<td th:text="${his.peso}"></td>
+			<td th:text="${his.altura}"></td>
+			<td th:text="${his.antecedentes}"></td>
+			<td th:each="alergias :${his.alergias}" th:text="${alergias.name}"></td>
+			<td th:text="${his.reaccion}"></td>
+			<td th:text="${his.medicamentos}"></td>
+			<td th:text="${his.examen}"></td>
+			<td th:text="${his.diagnostico}"></td>
+			<td th:text="${his.tratamiento}"></td>
+			<td><span >
+					<a href="#" th:href="@{'/editHis/'+ ${his.id}}"><i class="fas fa-edit"></i></a>
+					</span>
+					<span th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}" >
+					| <a href="#" th:onclick="'javascript:confirmDelete(\''+ ${his.id} +'\');'"><i class="fas fa-user-times"></i></a>
+					</span>
+					<span >
+						|<a href="#" th:href="@{'/verH/'+ ${his.id}}"><i class="fas fa-eye"></i></a>
+					</span>
+					
+		</tr>
+		</tbody>
+	</table>
+		<div class="alert alert-danger text-center" th:if="${ListErrorM}" th:text="${ListErrorM}">Error MEssage</div>
+
+</div>
+<script type="text/javascript">
+function confirmDelete(id){
+	$('#deleteModal').modal('show');
+	$("#userIdHiddenInput").val(id);
+}
+
+function deleteHis(){
+	var id = $("#userIdHiddenInput").val();
+    window.location = "deleteHis/"+id;
+}
+</script>
+
