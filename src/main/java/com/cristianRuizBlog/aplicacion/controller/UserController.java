@@ -8,11 +8,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
@@ -27,6 +31,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cristianRuizBlog.aplicacion.Exception.CustomeFieldValidationException;
 import com.cristianRuizBlog.aplicacion.Exception.UsernameOrIdNotFound;
@@ -35,6 +40,7 @@ import com.cristianRuizBlog.aplicacion.entity.Cita;
 import com.cristianRuizBlog.aplicacion.entity.Role;
 import com.cristianRuizBlog.aplicacion.entity.User;
 import com.cristianRuizBlog.aplicacion.repository.RoleRepository;
+import com.cristianRuizBlog.aplicacion.service.EmailService;
 import com.cristianRuizBlog.aplicacion.service.UserService;
 import com.cristianRuizBlog.aplicacion.util.reportes.CitaExporterPDF;
 import com.cristianRuizBlog.aplicacion.util.reportes.UserExporterExcel;
@@ -47,6 +53,30 @@ public class UserController {
 	private final String TAB_FORM = "formTab";
 	private final String TAB_LIST = "listTab";
 	
+
+	
+	@GetMapping("/solicitud")
+	public String solicitud() {
+		return "Solicitud";
+	}
+	
+
+	
+    @GetMapping("/loading")
+	public String loading() {
+		return "loading";
+	}
+	
+	@GetMapping("/exito")
+	public String exito() {
+		return "Exito";
+	}
+	
+	@GetMapping("/inicioU")
+	public String inicioU() {
+		return "user-form/inicio";
+	}
+
 	@Autowired
 	UserService userService;
 	
@@ -63,15 +93,7 @@ public class UserController {
 		return "index";
 	}
 	
-	@GetMapping("/solicitud")
-	public String solicitud() {
-		return "Solicitud";
-	}
 	
-	@GetMapping("/exito")
-	public String exito() {
-		return "Exito";
-	}
 	
 	@GetMapping("/signup")
 	public String signup(Model model) {

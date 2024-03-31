@@ -15,10 +15,15 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
+		
+		<dependency>
+   <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+	</dependency>
 		
 		<dependency>
 			<groupId>com.github.librepdf</groupId>
@@ -31,6 +36,12 @@
     <artifactId>poi-ooxml</artifactId>
     <version>4.1.0</version>
 	</dependency> 
+		
+		<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>mail</artifactId>
+    <version>1.4.7</version>
+		</dependency>
 		
 		<dependency>
     <groupId>org.springframework.boot</groupId>
@@ -60,6 +71,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
+		 <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <scope>runtime</scope>
+    </dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

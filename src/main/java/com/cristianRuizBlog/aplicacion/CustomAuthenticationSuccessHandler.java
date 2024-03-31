@@ -22,13 +22,13 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
 	        for (GrantedAuthority authority : authorities) {
 	            if (authority.getAuthority().equals("ROLE_ADMIN")) {
-	                response.sendRedirect("/userForm"); // Redirigir a la página de cita
+	                response.sendRedirect("/inicioU"); // Redirigir a la página de cita
 	                return;
 	            } else if (authority.getAuthority().equals("ROLE_ASESOR")) {
-	                response.sendRedirect("/citaForm"); // Redirigir a la página de historial
+	                response.sendRedirect("/inicioC"); // Redirigir a la página de historial
 	                return;
 	            } else if (authority.getAuthority().equals("ROLE_DOCTOR")) {
-	                response.sendRedirect("/hisForm"); // Redirigir a la página de solicitud
+	                response.sendRedirect("/inicioH"); // Redirigir a la página de solicitud
 	                return;
 	            }else if (authority.getAuthority().equals("ROLE_USER")) {
 	                response.sendRedirect("/solicitud"); // Redirigir a la página de solicitud

@@ -1,6 +1,7 @@
 package com.cristianRuizBlog.aplicacion.service;
 
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 import com.cristianRuizBlog.aplicacion.entity.Historial;

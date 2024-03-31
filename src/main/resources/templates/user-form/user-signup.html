@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>User Information and Form</title>
-	
+	<title>Sign Up</title>
+	<link rel="shortcut icon" href="static/img/Logo .pngg" th:href="@{/img/Logo .png}" type="image/x-icon" alt="logo" title="logo" />
+
 	<!--JQUERY-->
 	<script
  		src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -31,7 +32,7 @@
 		<div class="mx-auto col-sm-8 main-section" >
 			<div class="card">
 				<div class="card-header">
-					<h4>User Signup</h4>
+					<h4>Registrar nuevo usuario</h4>
 				</div>
 				<div class="card-body">
 					<div th:include="user-form/user-form.html" th:remove="tag" ></div>

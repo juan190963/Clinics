@@ -1,8 +1,42 @@
-body{
-    background: url(../img/background.jpg) no-repeat center center fixed;
-    background-size: cover;
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
 }
 
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+
+
+
+
+
+#toggle{
+ display: none;	
+}
+
+#label_toggle{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 2em;
+	color: rebeccapurple;
+	cursor: pointer;
+}
+
+.dark{
+background-color: rgb(2, 10, 23);	
+	transition: all 1.5s ease;
+}
 .main-section{
     margin:0 auto;
     margin-top:5%;
@@ -11,7 +45,7 @@ body{
 	opacity: .95;
 }
 .card-body{
-    background-color: #d1d3d6;
+background-color: rgb(199, 199, 199);
     box-shadow: 0px 0px 3px #848484;
 }
 
@@ -26,3 +60,6 @@ label{
 .nav-tabs{
 	border-bottom:0px;
 }
+
+
+

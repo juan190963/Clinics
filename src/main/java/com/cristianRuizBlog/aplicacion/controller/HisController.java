@@ -49,8 +49,13 @@ public class HisController {
 	@Autowired
 	AlergiasRepository alergiasRepository;
 	
+	@GetMapping("/inicioH")
+	public String inicioH() {
+		return "his-form/inicio";
+	}
+	
 	@GetMapping("/hisForm")
-	public String hisForm(Model model) {
+	public String hisForm(Model model ) {
 		model.addAttribute("hisForm", new Historial());
 		model.addAttribute("hisList", hisService.getAllHis());
 		model.addAttribute("venta", ventaRepository.findAll());

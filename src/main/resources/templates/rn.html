@@ -3,13 +3,15 @@
         <title>Rn_Clinics</title>  
 
         <link rel="shortcut icon" href="static/img/Logo .png" th:href="@{/img/Logo .png}" type="image/x-icon" alt="logo" title="logo" />
-   		 <link rel="stylesheet" type="text/css" href="static/css/rn.css" th:href="@{/css/rn.css}">
+   		 <link rel="stylesheet" type="text/css"  th:href="@{/css/rn.css}">
    		 <link rel="stylesheet" type="text/css" href="static/css/normalize.css" th:href="@{/css/normalize.css}">
         <meta charset="utf-8"></meta>
         <meta name="keywords" content="clinica,consultorio,pediatrico,pediatria,medicina"></meta>
         <meta name="description" content="Consultorio pediátrico integral: RN_Clinics, cuidado médico especializado y apoyo emocional para niños, todo en un ambiente cálido y acogedor."></meta>
         <meta name="author" content="Juan Diego Rios"></meta>
-        <script src="static/js/scrollreveal.js" th:href="@{/js/scrollreveal.js}"></script>
+        <script th:src="@{/scrollreveal.js}"></script>
+        <script  th:src="@{/tranciciones.js}"></script>
+
 <body>
 	<header class="hero" id="inicio">
         <nav class="nav container">
@@ -369,5 +371,9 @@
     distance:'100px'
   });
 </script>
+
+<script th:src="@{/js/tranciciones.js}"></script>
+
+
 </body>
 </html>

@@ -37,6 +37,11 @@ public class CitaController {
 	@Autowired
 	ServicioRepository servicioRepository;
 	
+	@GetMapping("/inicioC")
+	public String inicioC() {
+		return "cita-form/inicio";
+	}
+	
 	@GetMapping("/citaForm")
 	public String citaForm(Model model) {
 		model.addAttribute("citaForm", new Cita());
