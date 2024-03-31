@@ -1,0 +1,379 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+        <title>Rn_Clinics</title>  
+
+        <link rel="shortcut icon" href="static/img/Logo .png" th:href="@{/img/Logo .png}" type="image/x-icon" alt="logo" title="logo" />
+   		 <link rel="stylesheet" type="text/css"  th:href="@{/css/rn.css}">
+   		 <link rel="stylesheet" type="text/css" href="static/css/normalize.css" th:href="@{/css/normalize.css}">
+        <meta charset="utf-8"></meta>
+        <meta name="keywords" content="clinica,consultorio,pediatrico,pediatria,medicina"></meta>
+        <meta name="description" content="Consultorio pediátrico integral: RN_Clinics, cuidado médico especializado y apoyo emocional para niños, todo en un ambiente cálido y acogedor."></meta>
+        <meta name="author" content="Juan Diego Rios"></meta>
+        <script th:src="@{/scrollreveal.js}"></script>
+        <script  th:src="@{/tranciciones.js}"></script>
+
+<body>
+	<header class="hero" id="inicio">
+        <nav class="nav container">
+            <div class="nav_logo">
+                <h1 class="nav_title">RN CLINICS</h1>
+            </div>
+
+            <ul class="nav_link nav_link--menu">
+                <li class="nav_items">
+                    <a href="#inicio" class="nav_links">Inicio</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#servicios" class="nav_links">Servicios</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#zonas" class="nav_links">Zonas</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#contacto" class="nav_links">Contacto</a>
+                </li>
+                <li class="nav_items">
+                    <a href="login" class="nav_links">Iniciar Sesión/Regístrate</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="banner container">
+            <section class="banner_title">
+                <h2>¿Necesitas una cita para tu niño?</h2>
+                <a href="login" class="Solicitala" title="Solicitala" alt="Solicitala">¡Solicitala ya!</a>
+            </section>
+            <div class="banner_img">
+                <img src="static/img/fondo.jpg" th:src="@{/img/fondo.jpg}" alt="fondo" title="fondo " />
+            </div>
+        </section>
+
+        <section class="arrow">
+            <div class="banner_arrow">
+                <img src="static/img/arrow.svg" th:src="@{/img/arrow.svg}" alt="abajo" title="abajo " />
+            </div>
+        </section>
+        <div class="burbujas">
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+            <div class="burbuja"></div>
+        </div>
+    </header>
+</head>
+   <main>
+        <section class="container about" id="servicios">
+            <h2 class="subtitulo" id="#">Servicios</h2>
+            <p class="about_parrafo_1">
+                RN CLINICS es un consultorio pediatrico integral que ofrece una gama completa de atencion especializada
+                y cuidado completo para el bienestar físico y
+                emocional de los niños. Los cuales abarca los siguientes servicios
+            </p>
+            <div class="about_main">
+                <article class="about_iconos">
+                    <img src="static/img/pedia5.svg" th:src="@{/img/pedia5.svg}" alt="pediatria" title="pediatria" class="about_icono"/>
+                    <h3 class="about_title">Pediatria</h3>
+                    <p class="about_parrafo">Atención pediátrica excepcional: Nuestro servicio ofrece cuidado integral y
+                        especializado para niños, garantizando salud y bienestar.</p>
+                </article>
+
+                <article class="about_iconos">
+                    <img src="static/img/consulta.svg" th:src="@{/img/consulta.svg}" alt="consulta general" title="consulta general" class="about_icono1"/>
+                    <h3 class="about_title">Consulta General </h3>
+                    <p class="about_parrafo">Acceso rápido y confiable a información variada mediante asesoramiento
+                        experto, satisfaciendo tus preguntas y necesidades.</p>
+                </article>
+
+                <article class="about_iconos">
+                    <img src="static/img/odon5.svg" th:src="@{/img/odon5.svg}" alt="Odontologia" title="Odontologia" class="about_icono"/>
+                    <h3 class="about_title">Odontologia</h3>
+                    <p class="about_parrafo">Cuidamos tu salud bucal con expertos en odontología preventiva,
+                        tratamientos avanzados y atención personalizada. Sonríe con confianza.</p>
+                </article>
+
+                <article class="about_iconos">
+                    <img src="static/img/psico5.svg" th:src="@{/img/psico5.svg}" alt="Psicologia" title="Psicologia" class="about_icono1"/>
+                    <h3 class="about_title">Psicologia</h3>
+                    <p class="about_parrafo">Apoyo emocional profesional y confidencial. Nuestro servicio de psicología
+                        ofrece orientación para superar desafíos y mejorar el bienestar mental.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="zonas" id="zonas">
+            <div class="zonas_container container">
+                <img src="static/img/leftarrow.svg" th:src="@{/img/leftarrow.svg}" alt="atras" title="atras" class="zonas_arrow" id="before"/>
+                <section class="zonas_body zonas_body--show" data-id="1">
+                    <div class="zonas_text">
+                        <h2 class="subtitulo1">Zonas de pediatria y consulta general</h2>
+                        <p class="zonas_review">¡Descubre nuestra zona pediátrica llena de alegría y cuidado
+                            especializado para los más pequeños! Además, nuestra zona de consulta general ofrece
+                            atención integral para toda la familia. ¡Bienestar garantizado!</p>
+                    </div>
+                    <figure class="zonas_picture">
+                        <img src="static/img/pedia1.jpg" th:src="@{/img/pedia1.jpg}" alt="pediatria" title="pediatria" class="zonas_img"/>
+                    </figure>
+                </section>
+
+                <section class="zonas_body " data-id="2">
+                    <figure class="zonas_picture">
+                        <center><img src="static/img/pedia2.jpg" th:src="@{/img/pedia2.jpg}" alt="pediatria" title="pediatria" class="zonas_img1"/></center>
+                    </figure>
+                </section>
+
+                <section class="zonas_body " data-id="3">
+                    <figure class="zonas_picture">
+                        <center><img src="static/img/pedia3.jpg" th:src="@{/img/pedia3.jpg}" alt="consultorio" title="consultorio" class="zonas_img1"/>
+                        </center>
+
+                    </figure>
+                </section>
+
+                <section class="zonas_body" data-id="4">
+                    <div class="zonas_text">
+                        <h2 class="subtitulo">Zonas de odontología</h2>
+                        <p class="zonas_review">Explora nuestra zona odontológica calidad y cuidado dental
+                            excepcionales. Expertos en sonrisas saludables te esperan. ¡Descubre tu mejor sonrisa hoy!
+                        </p>
+                    </div>
+                    <figure class="zonas_picture">
+                        <img src="static/img/odon1.jpg" th:src="@{/img/odon1.jpg}" alt="odontología" title="odontología" class="zonas_img"/>
+                    </figure>
+                </section>
+
+                <section class="zonas_body " data-id="5">
+                    <figure class="zonas_picture">
+                        <center><img src="static/img/odon2.jpg" th:src="@{/img/odon2.jpg}" alt="odontología" title="odontología" class="zonas_img1"/>
+                        </center>
+                    </figure>
+                </section>
+
+                <section class="zonas_body " data-id="6">
+                    <figure class="zonas_picture">
+                        <center><img src="static/img/odon4.jpg" th:src="@{/img/odon4.jpg}" alt="odontología" title="odontología" class="zonas_img1"/>
+                        </center>
+
+                    </figure>
+                </section>
+                <section class="zonas_body " data-id="7">
+                    <figure class="zonas_picture">
+                        <center><img src="static/img/odon3.jpg" th:src="@{/img/odon3.jpg}" alt="odontología" title="odontología" class="zonas_img1"/>
+                        </center>
+
+                    </figure>
+                </section>
+                <section class="zonas_body" data-id="8">
+                    <div class="zonas_text">
+                        <h2 class="subtitulo1">Zonas de psicología</h2>
+                        <p class="zonas_review">Descubre una zona mental de infinitas posibilidades. Despierta tu
+                            creatividad, supera límites y encuentra equilibrio en este espacio psicológico único.</p>
+                    </div>
+                    <figure class="zonas_picture">
+                        <img src="static/img/psico2.jpg" th:src="@{/img/psico2.jpg}" alt="odontología" title="odontología" class="zonas_img"/>
+                    </figure>
+                </section>
+
+                <section class="zonas_body " data-id="9">
+                    <figure class="zonas_picture">
+                        <center><img src="static/img/psico3.jpg" th:src="@{/img/psico3.jpg}" alt="odontología" title="odontología" class="zonas_img1"/>
+                        </center>
+
+                    </figure>
+                </section>
+                <section class="zonas_body " data-id="10">
+                    <figure class="zonas_picture">
+                        <center><img src="static/img/psico4.jpg" th:src="@{/img/psico4.jpg}" alt="odontología" title="odontología" class="zonas_img1"/>
+                        </center>
+
+                    </figure>
+                </section>
+                <img src="static/img/rightarrow.svg" th:src="@{/img/rightarrow.svg}" alt="siguiente" title="siguiente" class="zonas_arrow1" id="next"/>
+            </div>
+            
+        </section>
+        
+       
+
+    </main>
+    <footer class="footer" id="contacto">
+        <section class="footer_container container">
+            <nav class="nav nav--footer">
+                <h2 class="footer_title">RN CLINICS</h2>
+
+                <ul class="nav__link nav_link--footer">
+                    <li class="nav_items">
+                        <a href="#" class="nav__links">Inicio</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="#" class="nav__links">Servicios</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="#" class="nav__links">Zonas</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="login.xhtml" class="nav__links">Iniciar Sesión/Regístrate</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="#" class="nav__links">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <section class="footer_copy container">
+            <div class="footer_social">
+                <a href="#" class="footer_icons"><img src="static/img/facebook.svg" th:src="@{/img/facebook.svg}"class="footer_img" alt="facebook" title="facebook"/></a>
+                <a href="#" class="footer_icons"><img src="static/img/instagram.svg"th:src="@{/img/instagram.svg}" class="footer_img" alt="instagram" title="instagram"/></a>
+                <a href="#" class="footer_icons"><img src="static/img/gmail.svg"th:src="@{/img/gmail.svg}" class="footer_img" alt="instagram" title="instagram"/></a>
+            </div>
+            <h3 class="footer_copyright">Derechos reservados &copy; Juan Diego Rios</h3>
+        </section>
+    </footer>
+        <script>
+			(function(){
+    
+    const sliders = [...document.querySelectorAll('.zonas_body')];
+    const buttonNext = document.querySelector('#next');
+    const buttonBefore = document.querySelector('#before');
+    let value;   
+
+    buttonNext.addEventListener('click', ()=>{
+        changePosition(1);
+    });
+
+    buttonBefore.addEventListener('click', ()=>{
+        changePosition(-1);
+    });
+
+    const changePosition = (add)=>{
+        const currentzonas = document.querySelector('.zonas_body--show').dataset.id;
+        value = Number(currentzonas);
+        value+= add;
+
+
+        sliders[Number(currentzonas)-1].classList.remove('zonas_body--show');
+        if(value === sliders.length+1 || value === 0){
+            value = value === 0 ? sliders.length  : 1;
+        }
+
+        sliders[value-1].classList.add('zonas_body--show');
+
+    }
+
+})();</script>
+
+<script>
+	window.sr = ScrollReveal();
+
+  sr.reveal('.nav_logo',{
+    duration:800,
+    orgin: 'bottom',
+    distance:'-100px'
+  });
+
+  sr.reveal('.nav_link',{
+    duration:800,
+    origin: 'bottom',
+    distance:'100px'
+  });
+
+  sr.reveal('.banner_title',{
+    duration:800,
+    origin: 'bottom',
+    distance:'100px'
+  });
+
+  sr.reveal('.banner_img',{
+    duration:800,
+    origin: 'bottom',
+    distance:'-100px'
+  });
+
+  sr.reveal('.banner_arrow',{
+    duration:3000,
+    origin: 'bottom',
+    distance:'400px'
+  });
+
+  sr.reveal('.subtitulo',{
+    duration:800,
+    origin: 'bottom',
+    distance:'100px'
+  });
+
+  sr.reveal('.about_parrafo_1',{
+    duration:800,
+    origin: 'bottom',
+    distance:'-100px'
+  });
+
+  sr.reveal('.about_icono',{
+    duration:2000,
+    origin: 'left',
+    distance:'400px'
+  });
+
+  sr.reveal('.about_icono1',{
+    duration:2000,
+    origin: 'rigth',
+    distance:'400px'
+  });
+
+  sr.reveal('.about_title',{
+    duration:2000,
+    origin: 'rigth',
+    distance:'400px'
+  });
+
+  sr.reveal('.about_parrafo',{
+    duration:2000,
+    origin: 'left',
+    distance:'400px'
+  });
+
+  sr.reveal('.subtitulo1',{
+    duration:2000,
+    origin: 'bottom',
+    distance:'100px'
+  });
+
+  sr.reveal('.zonas_review',{
+    duration:3000,
+    origin: 'bottom',
+    distance:'-100px'
+  });
+
+  sr.reveal('.zonas_picture',{
+    duration:3000,
+    origin: 'right',
+    distance:'100px'
+  });
+
+  sr.reveal('.zonas_arrow',{
+    duration:200,
+    origin: 'left',
+    distance:'100px'
+  });
+
+  sr.reveal('.zonas_arrow1',{
+    duration:800,
+    origin: 'rigth',
+    distance:'100px'
+  });
+
+  sr.reveal('.footer',{
+    duration:4000,
+    orgin: 'bottom',
+    distance:'100px'
+  });
+</script>
+
+<script th:src="@{/js/tranciciones.js}"></script>
+
+
+</body>
+</html>

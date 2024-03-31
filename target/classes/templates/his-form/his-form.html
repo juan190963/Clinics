@@ -1,0 +1,152 @@
+<form class="form" role="form" autocomplete="off"  th:object="${hisForm}" th:action="${signup}?@{/signup}:(${editMode} ?@{/editHis} :@{/hisForm})" method="post">
+	<!--Es necesario para poder pasar la validacion del Model-->
+	<input class="form-control" type=hidden th:field="${hisForm.id}"  th:if="${editMode}">
+
+	<div class="form-group row">
+		<label th:text="Venta" class="col-lg-3 col-form-label form-control-label"></label>
+		<div class="col-lg-9">
+			<select class="form-control"  th:field="${hisForm.venta}" th:disabled="${disableFields}">
+				<option th:each="venta :${venta}" th:value="${venta.id}" th:text="${venta.id}">
+				</option>
+			</select>
+			<div class="alert-danger" th:if="${#fields.hasErrors('venta')}" th:errors="*{venta}">Name Error</div>
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Documento</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${hisForm.documento}" th:disabled="${disableFields}">
+					<div class="alert-danger" th:if="${#fields.hasErrors('documento')}" th:errors="*{documento}">Name Error</div>
+	
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${hisForm.nombre}" th:disabled="${disableFields}">
+			<div class="alert-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Name Error</div>
+	
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Apellido</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${hisForm.apellido}" th:disabled="${disableFields}">
+			<div class="alert-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Name Error</div>
+	
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Edad</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${hisForm.edad}" th:disabled="${disableFields}">
+			<div class="alert-danger" th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}">Name Error</div>
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label th:text="Genero" class="col-lg-3 col-form-label form-control-label"></label>
+		<div class="col-lg-9">
+			<select class="form-control"  th:field="${hisForm.genero}" th:disabled="${disableFields}">
+				<option th:each="genero :${genero}" th:value="${genero.id}" th:text="${genero.name}">
+				</option>
+			</select>
+			<div class="alert-danger" th:if="${#fields.hasErrors('genero')}" th:errors="*{genro}">Name Error</div>
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Peso(kg)</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${hisForm.peso}" th:disabled="${disableFields}">
+			<div class="alert-danger" th:if="${#fields.hasErrors('peso')}" th:errors="*{peso}">Name Error</div>
+	
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Altura(cm)</label>
+		<div class="col-lg-9">
+			<input class="form-control" type="text" th:field="${hisForm.altura}" th:disabled="${disableFields}">
+			<div class="alert-danger" th:if="${#fields.hasErrors('altura')}" th:errors="*{altura}">Name Error</div>
+	
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Antecedentes Medico</label>
+		<div class="col-lg-9">
+			<textarea class="form-control" type="text" th:field="${hisForm.antecedentes}" th:disabled="${disableFields}" rows="4" cols="50"></textarea>
+			<div class="alert-danger" th:if="${#fields.hasErrors('antecedentes')}" th:errors="*{antecedentes}">Name Error</div>
+	
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label th:text="Alergias" class="col-lg-3 col-form-label form-control-label"></label>
+		<div class="col-lg-9">
+			<select class="form-control"  th:field="${hisForm.alergias}" th:disabled="${disableFields}">
+				<option th:each="alergias :${alergias}" th:value="${alergias.id}" th:text="${alergias.name}">
+				</option>
+			</select>
+			<div class="alert-danger" th:if="${#fields.hasErrors('genero')}" th:errors="*{genro}">Name Error</div>
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Causa de las alergias</label>
+		<div class="col-lg-9">
+			<textarea class="form-control" type="text" th:field="${hisForm.reaccion}" th:disabled="${disableFields}" rows="4" cols="50"></textarea>
+			<div class="alert-danger" th:if="${#fields.hasErrors('reaccion')}" th:errors="*{reaccion}">Name Error</div>
+	
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Medicamentos Actuales</label>
+		<div class="col-lg-9">
+			<textarea class="form-control" type="text" th:field="${hisForm.medicamentos}" th:disabled="${disableFields}" rows="4" cols="50"></textarea>
+			<div class="alert-danger" th:if="${#fields.hasErrors('medicamentos')}" th:errors="*{medicamentos}">Name Error</div>
+	
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Examen de la cita</label>
+		<div class="col-lg-9">
+			<textarea class="form-control" type="text" th:field="${hisForm.examen}" th:disabled="${disableFields}" rows="4" cols="50"></textarea>
+			<div class="alert-danger" th:if="${#fields.hasErrors('examen')}" th:errors="*{examen}">Name Error</div>
+	
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Diagnostico</label>
+		<div class="col-lg-9">
+			<textarea class="form-control" type="text" th:field="${hisForm.diagnostico}" th:disabled="${disableFields}" rows="4" cols="50"></textarea>
+			<div class="alert-danger" th:if="${#fields.hasErrors('diagnostico')}" th:errors="*{diagnostico}">Name Error</div>
+	
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-lg-3 col-form-label form-control-label">Tratamiento</label>
+		<div class="col-lg-9">
+			<textarea class="form-control" type="text" th:field="${hisForm.tratamiento}" th:disabled="${disableFields}" rows="4" cols="50"></textarea>
+			<div class="alert-danger" th:if="${#fields.hasErrors('tratamiento')}" th:errors="*{tratamiento}">Name Error</div>
+	
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<div class="col-lg-12 text-center">
+			<a class="btn btn-secondary"  th:href="@{'/editHis/cancel'}">Cancelar</a>
+			<input type="submit" class="btn btn-primary"
+				value="Save Changes" th:value="${editMode}?'Save User':'Create User'">
+		</div>
+	</div>
+	<div class="alert alert-danger text-center" th:if="${errorM}" th:text="${errorM}">Error MEssage</div>
+	<div class="alert alert-success text-center d-none" id="formSuccess" th:if="${editMode}" >Success MEssage</div>
+</form>
+</div>
